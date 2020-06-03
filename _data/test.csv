@@ -1,0 +1,2 @@
+pid,label,description,_date,order,layout,collection,thumbnail,full,manifest
+thing,The Thing,This is the thing,1936,0,binder_item,test,"/img/derivatives/iiif/images/thing_001/full/250,/0/default.jpg",/img/derivatives/iiif/images/thing_001/full/full/0/default.jpg,/img/derivatives/iiif/thing/manifest.json

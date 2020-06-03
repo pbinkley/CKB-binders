@@ -1,0 +1,16 @@
+---
+layout: none
+---
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/collection/binders.json",
+  "@type": "sc:Collection",
+  "label": "binders",
+  "manifests": [
+    {
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/CKB-binder-7/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "CKB, Guiguzi (鬼谷子)"
+    }
+  ]
+}

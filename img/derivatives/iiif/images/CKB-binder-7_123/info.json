@@ -1,0 +1,5 @@
+---
+layout: none
+---
+
+{"@context":"http://iiif.io/api/image/2/context.json","@id":"{{ '/' | absolute_url }}img/derivatives/iiif/images/CKB-binder-7_123","protocol":"http://iiif.io/api/image","width":3224,"height":3455,"sizes":[{"width":3224,"height":3455},{"width":250,"height":268},{"width":90,"height":96}],"profile":["http://iiif.io/api/image/2/level0.json",{"supports":["cors","sizeByWhListed","baseUriRedirect"]}],"tiles":[{"width":512,"scaleFactors":[1,2,4,8]}]}
