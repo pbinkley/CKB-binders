@@ -18,7 +18,7 @@
 # Feel free to change these! For more info, refer to:
 # ~> https://jekyllrb.com/docs/configuration/options/
 
-title:            'Christian K. Binkley, Translation'
+title:            'C.K. Binkley, Guiguzi (鬼谷子)'
 description:      'Minimal Exhibitions with Jekyll'
 url:              'https://minicomp.github.io'
 baseurl:          '/CKB-binder-7'
@@ -62,8 +62,6 @@ kramdown:
 # ~> https://jekyllrb.com/docs/collections/
 
 collections:
-  exhibits:
-    output: true
   binders: # name of collection
     output: true # makes sure pages are output as html files
     layout: 'binder_item' # the layout for the pages to use
@@ -71,13 +69,6 @@ collections:
       source: 'binders.csv' # path to the metadata file within `_data`
     images:
       source: 'raw_images/binders' # path to the directory of images within `_data`
-  test: # name of collection
-    output: true # makes sure pages are output as html files
-    layout: 'binder_item' # the layout for the pages to use
-    metadata:
-      source: 'test.csv' # path to the metadata file within `_data`
-    images:
-      source: 'raw_images/test' # path to the directory of images within `_data`
       
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
@@ -113,16 +104,6 @@ menu:
         link: 'https://minicomp.github.io/wiki/wax/'
       - label: 'Credits'
         link: '/credits/'
-  - label: 'Exhibits'
-    sub:
-      - label: 'Inline Parallax Image'
-        link: '/exhibits/a/'
-      - label: 'Inline Image References'
-        link: '/exhibits/b/'
-  - label: 'Browse'
-    link: '/collection/'
-  - label: 'Search'
-    link: '/search/'
   - label: 'Reuse'
     link: '/reuse/'
 
