@@ -20,8 +20,8 @@
 
 title:            'C.K. Binkley, Guiguzi (鬼谷子)'
 description:      'Minimal Exhibitions with Jekyll'
-url:              'https://minicomp.github.io'
-baseurl:          '/CKB-binder-7'
+url:              'https://www.wallandbinkley.com'
+baseurl:          '/projects/2020/CKB-binders'
 copyright:        'Example copyright org, 2019'
 logo:             '/assets/logo.png'
 
