@@ -78,6 +78,59 @@ namespace :postwax do
       full = "#{image_path}/full"
       FileUtils.cp_r(full_area, full)
     end
-
   end
+
+  desc "Generate table-of-contents ranges from yaml file"
+  task "toc" do
+    require 'yaml'
+
+    args = ARGV.drop(1).each { |a| task a.to_sym }
+    args.reject! { |a| a.start_with? '-' }
+
+    abort("You must specify an item pid after 'postwax:toc'") if args.empty?
+   
+    manifestPath = "./img/derivatives/iiif/#{args[0]}/manifest.json"
+    manifest = JekyllJSON.new(manifestPath)
+
+    # gather canvas ids
+    canvases = []
+    manifest.json['sequences'][0]['canvases'].each { |canvas| canvases << canvas['@id'] }
+
+    # read TOC data from yaml
+    SafeYAML::OPTIONS[:default_mode] = :safe
+    tocData = YAML.load_file("_data/toc-#{args[0]}.yaml")
+
+    # build IIIF ranges
+    ranges = []
+    range_ids = []
+
+    tocData.each do |entry|
+      key = entry.keys.first
+      title = entry[key]
+      # TODO: generalize to handle any image pids, not just integers
+      range_id = "{{ '/' | absolute_url }}img/derivatives/iiif/range/#{args[0]}_#{"%03d" % key}.json"
+
+      ranges << {
+                   "@id": range_id,
+                   "@type": "sc:Range",
+                   "label": title,
+                   "canvases": ["{{ '/' | absolute_url }}img/derivatives/iiif/canvas/#{args[0]}_#{"%03d" % key}.json"]
+                 }
+      range_ids << range_id
+    end
+
+    toc = {
+        "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/#{args[0]}/structures/toc",
+        "@type": "sc:Range",
+        "label": "Table of Contents",
+        "viewingHint": "top",
+        "ranges": range_ids,
+        "canvases": canvases
+      }
+
+    manifest.json['structures'] = [toc] + ranges
+
+    manifest.save
+  end
+
 end
