@@ -70,6 +70,10 @@ collections:
       source: 'binders.csv' # path to the metadata file within `_data`
     images:
       source: 'raw_images/binders' # path to the directory of images within `_data`
+      iiif:
+        skipkeys:
+          - attribution
+          - description
       
 # --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
