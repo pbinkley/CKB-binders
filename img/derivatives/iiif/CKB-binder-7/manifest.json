@@ -48,7 +48,7 @@ layout: none
   ],
   "thumbnail": "{{ '/' | absolute_url }}img/derivatives/iiif/images/CKB-binder-7_001/full/250,/0/default.jpg",
   "viewingDirection": "left-to-right",
-  "viewingHint": "individuals",
+  "viewingHint": "paged",
   "sequences": [
     {
       "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/sequence/CKB-binder-7_001.json",
