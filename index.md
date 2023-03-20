@@ -28,7 +28,7 @@ Starting at page 29 are several pages of bibliography in a different hand, first
   const options = {
     language: query.get('language') || 'en',
     manifestUrl: 'https://www.wallandbinkley.com/projects/2020/CKB-binders/img/derivatives/iiif/CKB-binder-7/manifest.json',
-    //urlQueryKey: 'tify',
+    urlQueryKey: 'tify',
     view: 'toc',
   };
 
